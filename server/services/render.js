@@ -3,7 +3,7 @@ const axios = require(`axios`);
 
 exports.homeRoutes = (req, res) => {
     // make a get request to /api/banks
-    axios.get(`http://localhost:3000/api/banks`)
+    axios.get(`${process.env.BASE_URL}/api/banks`)
         .then(function (response) {
             res.render(`index`, { banks: response.data})
         })
@@ -18,7 +18,7 @@ exports.add_bank = (req, res) => {
 }
 
 exports.update_bank = (req, res) => {
-    axios.get(`http://localhost:3000/api/banks`, {params: {id: req.query.id}})
+    axios.get(`${process.env.BASE_URL}/api/banks`, {params: {id: req.query.id}})
         .then(function(bankData) {
             res.render(`update_bank`, {bank: bankData.data})
         })
@@ -32,7 +32,7 @@ exports.update_bank = (req, res) => {
 exports.mortgage_calculator = (req, res) => {
     
     // make a get request to /api/banks
-    axios.get(`http://localhost:3000/api/banks`)
+    axios.get(`${process.env.BASE_URL}/api/banks`)
         .then(function (response) {
             res.render(`mortgage_calculator`, { banks: response.data})
         })
@@ -45,7 +45,7 @@ exports.mortgage_calculator = (req, res) => {
 exports.table = (req, res) => {
 
     // make a get request to /api/banks
-    axios.get(`http://localhost:3000/api/banks`)
+    axios.get(`${process.env.BASE_URL}/api/banks`)
         .then(function (response) {
             res.render(`mortgage_calculator`, { banks: response.data})
         })

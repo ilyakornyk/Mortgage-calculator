@@ -1,3 +1,4 @@
+const BASE_URL = `https://fast-woodland-07482.herokuapp.com`;
 
 $("#add_bank").submit( function(event){
     let unindexed_array = $(this).serializeArray();
@@ -27,7 +28,9 @@ $(".calculate_mortgage").submit(function(event) {
     let minUserPayment = document.querySelector(`#downPayment`).value;
     let initialLoan = document.querySelector(`#initialLoan`).value;
 
-    fetch('http://localhost:3000/api/banks')
+    console.log(process.env.BASE_URL);
+    
+    fetch(`${BASE_URL}`)
         .then((response) => {
             return response.json();
         })
@@ -64,7 +67,7 @@ $("#update_bank").submit(function(event){
 
 
     var request = {
-        "url" : `http://localhost:3000/api/banks/${data.id}`,
+        "url" : `${BASE_URL}/api/banks/${data.id}`,
         "method" : "PUT",
         "data" : data
     }
@@ -84,7 +87,7 @@ if(window.location.pathname == "/"){
         var id = $(this).attr("data-id")
 
         var request = {
-            "url" : `http://localhost:3000/api/banks/${id}`,
+            "url" : `${BASE_URL}/api/banks/${id}`,
             "method" : "DELETE"
         }
 
