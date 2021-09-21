@@ -28,7 +28,6 @@ $(".calculate_mortgage").submit(function(event) {
     let minUserPayment = document.querySelector(`#downPayment`).value;
     let initialLoan = document.querySelector(`#initialLoan`).value;
 
-    console.log(process.env.BASE_URL);
     
     fetch(`${BASE_URL}`)
         .then((response) => {
