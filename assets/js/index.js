@@ -29,7 +29,7 @@ $(".calculate_mortgage").submit(function(event) {
     let initialLoan = document.querySelector(`#initialLoan`).value;
 
     
-    fetch(`${BASE_URL}`)
+    fetch(`${BASE_URL}/api/banks`)
         .then((response) => {
             return response.json();
         })
