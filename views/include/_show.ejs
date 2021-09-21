@@ -1,0 +1,22 @@
+<% for(var i = 0; i < banks.length; i++) { %>
+
+<tr>
+    <td><%= i + 1 %></td>
+    <td><%= banks[i].name %></td>
+    <td><%= banks[i].interestRate %></td>
+    <td><%= banks[i].maxLoan %></td>
+    <td><%= banks[i].minPayment %></td>
+    <td><%= banks[i].loanTerm %></td>
+    <td>
+        <a href="/update-bank?id=<%= banks[i]._id%>" class="btn border-shadow update">
+            <span class="text-gradient">
+                <i class="fas fa-pencil-alt"></i>
+            </span>
+        </a>
+
+        <a class="btn border-shadow delete" data-id=<%= banks[i]._id%> >
+            <span class="text-gradient"><i class="fas fa-times"></i></span>
+        </a>
+    </td>
+</tr>
+<% } %>

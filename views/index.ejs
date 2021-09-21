@@ -1,0 +1,57 @@
+<!-- Include header -->
+<%- include('include/_header') %>
+<!-- /include header -->
+
+
+
+    <!-- Main Site -->
+
+    <main id="site-main">
+        <div class="container">
+            <div class="box-nav d-flex-justify-between">
+                <a href="/add-bank" class="border-shadow">
+                    <span class="text-gradient">New Bank <i class="fas fa-landmark"></i></span>
+                </a>
+
+                <a href="/mortgage-calculator" class="border-shadow">
+                    <span class="text-gradient">Calculate mortgage <i class="fas fa-calculator"></i></span>
+                </a>
+            </div>
+
+
+            <% if(banks.length <= 0){ %>
+                <div class="container-block">
+                <h1>Please add a bank</h1>
+
+                </div>
+              <% } else{ %>  
+   <!-- form handling -->
+            <form action="/" method="POST">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>№</th>
+                            <th>Name</th>
+                            <th>Interest rate</th>
+                            <th>Maximum loan</th>
+                            <th>Minimum down payment</th>
+                            <th>Loan term</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%- include('include/_show') %>
+                    </tbody>
+                </table>
+            </form>
+                <% } %>
+                
+         
+        </div>
+    </main>
+
+<!-- /Main Site -->
+
+<!-- Include header -->
+<%- include('include/_footer') %>
+<!-- /include header -->

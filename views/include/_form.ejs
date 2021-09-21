@@ -1,0 +1,40 @@
+<form id="add_bank" action="/api/banks" method="POST">
+    <div class="new_bank">
+        <div class="form-group">
+            <label for="name" class="text-light">Name</label>
+            <input type="hidden" name="id" value="">
+            <input type="text" name="name" value="Bank name" required placeholder="Bank of America">
+        </div>
+        
+        <div class="form-group">
+            <label for="interestRate" class="text-light">Interest rate %</label>
+            <input type="hidden" name="interestRate" value="">
+            <input type="text" name="interestRate"  required pattern="^\d*\.?\d*$" value="2.2" placeholder="5">
+        </div>
+        
+        <div class="form-group">
+            <label for="maxLoan" class="text-light">Maximum loan</label>
+            <input type="hidden" name="maxLoan" value="">
+            <input type="text" name="maxLoan" required pattern="[0-9]+" value="400000" placeholder="250000">
+        </div>
+        
+        <div class="form-group">
+            <label for="minPayment" class="text-light">Minimum down payment</label>
+            <input type="hidden" name="minPayment" value="">
+            <input type="text" name="minPayment" required pattern="[0-9]+" value="1200" placeholder="30000">
+        </div>
+
+        <div class="form-group">
+            <label for="loanTerm" class="text-light">Loan term (months)</label>
+            <input type="hidden" name="loanTerm" value="">
+            <input type="text" name="loanTerm"  required pattern="[0-9]+" value="120" placeholder="36">
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn text-dark update">Save</button>
+        </div>
+    </div>
+</form>
+
+
+

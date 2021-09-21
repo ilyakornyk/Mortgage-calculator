@@ -1,0 +1,96 @@
+<!-- Include header -->
+<%- include('include/_header') %>
+
+<!-- /include header -->
+
+    <!-- Main Site -->
+
+    <main id="site-main">
+        <div class="container">
+            <div class="box-nav d-flex-justify-between">
+                <div class="filter">
+                    <a href="/"><i class="fas fa-angle-double-left"></i>All Banks </a>
+                </div>
+            </div>
+
+            <div class="form-title text-center">
+                <h2 class="text-dark">Calculator</h2>
+                <span class="text-light">Use the below form to calculate mortgage</span>
+            </div>
+
+            <!-- form handling -->
+            <form id="calculate_mortgage" class="calculate_mortgage" >
+                <div class="new_bank">
+                    <div class="form-group">
+                        <label for="initialLoan" class="text-light">Initial Loan</label>
+                        <input type="hidden"  value="">
+                        <input type="text" id="initialLoan" pattern="[0-9]+" required name="initialLoan" value="200000" placeholder="280000">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="downPayment" class="text-light">Down payment</label>
+                        <input type="hidden" value="">
+                        <input type="text" name="downPayment" pattern="[0-9]+" required id="downPayment" value="4000" placeholder="20000">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="downPayment" class="text-light">Choose a bank</label>
+                        <br>
+                        <% if (banks.length <= 0) { %>
+                            <p class="empty-list"> There are no banks</p>
+                        <%} else { %>
+
+
+                            <label class="select" for="slct">
+                                <select name="options" id="slct" required="required">
+                                <option value="" disabled="disabled" selected="selected">Select a bank</option>
+                                <% for(var i = 0; i < banks.length; i++) { %>
+                                    <option >
+                                        <a href="#" id="<%= banks[i]._id%>" class="calculate_mortgage"><%= banks[i].name%></a>
+                                    </option>
+
+                                <% } %>
+                            </select><svg>
+                                <use xlink:href="#select-arrow-down"></use>
+                            </svg></label><!-- SVG Sprites--><svg class="sprites">
+                            <symbol id="select-arrow-down" viewbox="0 0 10 6">
+                                <polyline points="1 1 5 5 9 1"></polyline>
+                            </symbol>
+                        </svg>
+
+
+                        <% } %>
+                        
+                    </div>
+
+                    <div class="form-group">
+                        <label for="monthlyPayment" class="text-light">Monthly mortgage payment</label>
+                        <input type="hidden" name="monthlyPayment" value="">
+                        <input type="text" id="monthlyPayment" value="" disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn text-dark update calculate_mortgage">Calculate</button>
+                    </div>
+  
+
+                </div>
+
+            </form>
+            
+        </div>
+
+
+
+    </main>
+
+
+<!-- /Main Site -->
+
+
+
+<!-- Include header -->
+
+<%- include('include/_footer') %>
+<!-- /include header -->

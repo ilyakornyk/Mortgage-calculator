@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=PT+Sans&display=swap');
+
+:root{
+    --dark: #2b2d42;
+    --light: #adb5db;
+    --border: #dee2e6;
+    --border-btn: #edf2f4;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.container {
+    max-width: 1024px;
+    margin: auto;
+}
+
+.nav-brand {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.border-shadow {
+    border: 1px solid var(--border-btn);
+    box-shadow: 1px 3px 10px #e9ecef;
+}
+
+.text-dark {
+    color: var(--dark);
+}
+
+.inline {
+    display: inline-block;
+}
+
+.text-light {
+    color: var(--light);
+}
+
+.text-gradient {
+    background: linear-gradient(to right, #8e2de2, #4a00e0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#header nav {
+    background-color: #06d6a0;
+    padding: 1em 0;
+    width: 100%;
+}
+
+#site-main {
+    margin-top: 6em;
+    font-family: 'Barlow', sans-serif;
+
+}
+
+#site-main .container .box-nav > a {
+    font-size: 1em;
+    padding: 0.5em 1em;
+
+}
+
+#site-main .container form {
+    margin: 2em 0;
+}
+
+table {
+    width: 100%;
+    border-spacing: 0px;
+}
+
+.table td, .table  th{
+    padding: .75em;
+    vertical-align: top;
+    text-align: center;
+    border-top: 1px solid var(--border);
+
+}
+
+.table td > a.btn {
+    padding: .3em 1em;
+    font-size: 1.1em;
+    margin: 0.2em;
+    cursor: pointer;
+}
+
+.table tr:hover {
+    background-color: #06d6a0;
+}
+
+.table tr:hover td > a {
+    box-shadow: none;
+}
+
+.table .thead-dark th {
+    color: #fff;
+    background-color: var(--dark);
+    border-color: #32383e;
+}
+
+
+
+/* add bank and update bank template */
+
+.form-title {
+    margin-top: 2em;
+}
+
+.form-title > h2 {
+    padding: 0.5em 0;
+}
+
+.new_bank {
+    /* min-width: 768px; */
+    margin: auto;
+}
+
+#update_bank .form-group, 
+#calculate_mortgage .form-group, 
+#add_bank .form-group {
+    margin: 0.4em 0;
+}
+
+#update_bank .form-group input[type="text"],
+#calculate_mortgage .form-group input[type="text"],
+#add_bank .form-group input[type="text"] {
+    width: 100%;
+    padding: 0.6em 1em;
+    margin: 0.5em 0;
+    border: 1px solid var(--border);
+}
+
+#update_bank .form-group .btn,
+#calculate_mortgage .form-group .btn,
+#add_bank .form-group .btn {
+    width: 100%;
+    padding: 0.9em 1em;
+    background-color: #16db93;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1em;
+    border: none;
+    border-radius: .2em;
+    margin: .5em 0;
+}
+
+#update_bank .form-group .btn:hover,
+#calculate_mortgage .form-group .btn:hover,
+#add_bank .form-group .btn:hover {
+    background-color: var(--dark);
+    color: var(--border)
+}
+
+
+/* dropdown menu */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+.bank-box {
+    border: 1px solid #dee2e6;
+    padding: 5px;
+}
+
+.bank-box:hover {
+    transition: all .3s ease;
+    background: #16db93;
+}
+
+.bank-box.active {
+    background: #16db93;
+}
+
+.bank-box:not(:first-child) {
+    margin-left: 5px;
+}
+
+
+.empty-list {
+    margin-top: 5px;
+}
+
+.bank-index-container {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+  }
+
+#slct {
+    width: auto;;
+}
+
+  .select {
+    position: relative;
+    min-width: 200px;
+  }
+  .select svg {
+    position: absolute;
+    right: 12px;
+    top: calc(50% - 3px);
+    width: 10px;
+    height: 6px;
+    stroke-width: 2px;
+    stroke: #9098a9;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    pointer-events: none;
+  }
+  .select select {
+    -webkit-appearance: none;
+    padding: 7px 40px 7px 12px;
+    width: 100%;
+    border: 1px solid #e8eaed;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 1px 3px -2px #9098a9;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+    transition: all 150ms ease;
+  }
+  .select select:required:invalid {
+    color: #5a667f;
+  }
+  .select select option {
+    color: #223254;
+  }
+  .select select option[value=""][disabled] {
+    display: none;
+  }
+  .select select:focus {
+    outline: none;
+    border-color: #07f;
+    box-shadow: 0 0 0 2px rgba(0,119,255,0.2);
+  }
+  .select select:hover + svg {
+    stroke: #07f;
+  }
+  .sprites {
+    position: absolute;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    user-select: none;
+  }
+  
+
+  .container-block {
+      margin-top: 20vh;
+      text-align: center;
+
+  }
+
+
+
+  /* MEDIA QUERIES */
+  @media only screen and (max-width: 768px) {
+    #add_bank, #update_bank,.new_bank, #calculate_mortgage  {
+      width: 100vw  !important;
+    }
+  }
+  @media only screen and (max-width: 1024px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        border: 1px solid var(--border);
+    }
+
+    td {
+        border: none;
+        position: relative;
+    }
+}
